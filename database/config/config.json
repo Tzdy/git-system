@@ -1,0 +1,14 @@
+{
+  "development": {
+    "storage":"../gitsystem.db",
+    "dialect": "sqlite"
+  },
+  "test": {
+    "storage":"../gitsystem.db",
+    "dialect": "sqlite"
+  },
+  "production": {
+    "storage":"../gitsystem.db",
+    "dialect": "sqlite"
+  }
+}
