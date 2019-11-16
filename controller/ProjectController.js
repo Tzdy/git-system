@@ -1,6 +1,6 @@
 var exec = require('child_process').execSync;
 var fs = require('fs');
-var shell_path = JSON.parse(fs.readFileSync('./shell/shell.json')).path;
+var shell_path = JSON.parse(fs.readFileSync('./shell/shell.json')).project_path;
 var inquirer = require('inquirer');
 var ProjectService = require('../service/ProjectService');
 var public = require('../public/searcher')
