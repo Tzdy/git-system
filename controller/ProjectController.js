@@ -1,4 +1,6 @@
 var exec = require('child_process').execSync;
+var fs = require('fs');
+var shell_path = JSON.parse(fs.readFileSync('./shell/shell.json')).path;
 var inquirer = require('inquirer');
 var ProjectService = require('../service/ProjectService');
 var public = require('../public/searcher')
@@ -19,8 +21,10 @@ class ProjectController {
             }
         ])
 
-        if ((await projectService.create(message.name, message.author))[1])
+        if ((await projectService.create(message.name, message.author))[1]){
+            exec(shell_path.create + ' ' +message.name);
             return true;
+        }
         return false;
 
     }
@@ -50,6 +54,7 @@ class ProjectController {
 
         message.message.forEach(async item => {
             await projectService.deleteByName(item);
+            exec(shell_path.delete + ' ' + item);
         })
     }
     async displayProject() {
@@ -90,6 +95,7 @@ class ProjectController {
         ])
 
         await projectService.updateName(message.message, input.input);
+        exec(shell_path.uptate + ' ' + message.message + ' ' + input.input);
         
     }
 

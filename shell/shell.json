@@ -1,0 +1,7 @@
+{
+    "project_path":{
+        "create":"./shell/git/addRepo.sh",
+        "delete":"./shell/git/deleteRepo.sh",
+        "update":"./shell/git/updateRepo.sh"
+    }
+}

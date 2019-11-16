@@ -1,7 +1,7 @@
 {
   "name": "git-system",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "dependencies": {
     "sequelize": "^5.21.2",
@@ -12,5 +12,10 @@
   },
   "peerDependencies": {
     "sequelize": "^5.21.2"
+  },
+  "scripts": {
+    "dev":"shell/create.sh",
+    "init":"shell/git/init.sh",
+    "run":"node main.js"
   }
 }
