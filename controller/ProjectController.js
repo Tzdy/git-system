@@ -22,7 +22,7 @@ class ProjectController {
         ])
 
         if ((await projectService.create(message.name, message.author))[1]){
-            exec(shell_path.create + ' ' +message.name);
+            // exec(shell_path.create + ' ' +message.name);
             return true;
         }
         return false;
@@ -54,7 +54,7 @@ class ProjectController {
 
         message.message.forEach(async item => {
             await projectService.deleteByName(item);
-            exec(shell_path.delete + ' ' + item);
+            // exec(shell_path.delete + ' ' + item);
         })
     }
     async displayProject() {
@@ -95,7 +95,7 @@ class ProjectController {
         ])
 
         await projectService.updateName(message.message, input.input);
-        exec(shell_path.uptate + ' ' + message.message + ' ' + input.input);
+        // exec(shell_path.uptate + ' ' + message.message + ' ' + input.input);
         
     }
 
