@@ -1,7 +1,5 @@
 const ProjectRepository = require('../model/Project');
 
-const ProjectAttributeRepository = require('../model/Project_attribute');
-
 class ProjectService{
     /**
      * 

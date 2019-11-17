@@ -1,7 +1,9 @@
 const sequelize = require('./config');
+const attribute = require('./Project_attribute');
+
 
 const { INTEGER, STRING, DATE, NOW} = sequelize.Sequelize;
-module.exports = sequelize.define('project', {
+let Project = sequelize.define('project', {
     id: { type: INTEGER, primaryKey: true, autoIncrement: true, allowNull: false },
     name: { type: STRING(32), unique: true, allowNull: false },
     author: { type: STRING(32), allowNull: false },
@@ -9,3 +11,5 @@ module.exports = sequelize.define('project', {
     updated_at: { type: DATE, defaultValue: NOW }
 
 })
+
+module.exports = Project;

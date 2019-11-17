@@ -23,7 +23,7 @@ module.exports = async function () {
             case '新建项目':
                 console.clear();
                 if (await projectController.createProject()) {
-                    console.clear();
+                    // console.clear();
                     console.log("创建成功！");
                 }
                 break;

@@ -6,6 +6,7 @@ let options = {
     updatedAt:false
 }
 
-module.exports = sequelize.define('attribute',{
+module.exports = sequelize.define('project_attribute',{
+    id:{type:INTEGER, primaryKey:true, defaultValue:1},
     project_amount:{type: INTEGER, allowNull:false},
 },options)
