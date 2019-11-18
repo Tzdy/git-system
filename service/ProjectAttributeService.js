@@ -11,9 +11,12 @@ class ProjectAttributeService{
     }
 
     async decrease() {
-        
+        let arr = (await ProjectAttributeRepository.findAll());
+        let count = arr[0].dataValues.project_amount;
+        await ProjectAttributeRepository.update({
+            project_amount:count - 1
+        },{where:{}})
     }
-
-
-
 }
+
+module.exports = ProjectAttributeService;

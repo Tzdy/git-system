@@ -1,0 +1,5 @@
+CREATE TABLE `user_project`(
+    id INTEGER NOT NULL AUTOINCREMENT,
+    username VARCHAR(32) NOTNULL,
+    project VARCHAR(32) NOTNULL,
+)

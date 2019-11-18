@@ -1,5 +1,7 @@
 const ProjectRepository = require('../model/Project');
 
+const ProjectAttributeService = require('./ProjectAttributeService');
+const projectAttributeService = new ProjectAttributeService;
 class ProjectService{
     /**
      * 
@@ -13,6 +15,7 @@ class ProjectService{
                 name,author
             }
         })
+        await projectAttributeService.increace();
         return param;
     }
     async deleteByName(name) {
@@ -21,6 +24,7 @@ class ProjectService{
                 name
             }
         })
+        await projectAttributeService.decrease();
     }
     /**
      * @returns {Promise<Array<Model>>}

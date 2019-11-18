@@ -20,7 +20,8 @@ class ProjectController {
                 name: 'author',
             }
         ])
-
+        if(message.name.length == 0 || message.author.length == 0)
+            return false;
         if ((await projectService.create(message.name, message.author))[1]){
             // exec(shell_path.create + ' ' +message.name);
             return true;
